@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta charset="UTF-8">
+   <title>Assignly</title>
+   <link rel="icon" type="image/png" sizes="32x32" href="assignly-favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assignly-favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assignly-favicon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assignly-favicon.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assignly-favicon.png">
+<link rel="shortcut icon" href="assignly-favicon.png">
+   <link rel="stylesheet" href="style1.css">
+   <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;700&family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=download" />
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&display=swap" rel="stylesheet">
+
+</head>
+<body>
+   <!-- Loader -->
+   <div class="loader_wrapper">
+     <div class="hourglass"></div>
+   </div>
+
+   <!-- Navbar -->
+   <div class="container_body">
+   <nav>
+      <ul class="sidenav">
+         <li class="close-btn"onclick="hideSidenav()">
+               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+                  <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+               </svg>
+            
+         </li>
+         <li><a href="home.html#">Home</a></li>
+         <li><a href="home.html#about_us">About</a></li>
+         <li><a href="home.html#contact_us">Contact</a></li>
+         <li><a href="user.html">User Page</a></li>
+         <li><a href="volunteer.html">Volunteer Page</a></li>
+      </ul>
+      <ul>
+         <li class="menu_btn" onclick="showSidenav()">
+            <a href="#">
+               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+                  <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+               </svg>
+            </a>
+         </li>
+         <li class="proj_name"><a href="home.html#">ASSIGNLY</a></li>
+         <li class="hideOnMobile"><a href="home.html#">Home</a></li>
+         <li class="hideOnMobile"><a href="home.html#about_us">About</a></li>
+         <li class="hideOnMobile"><a href="home.html#contact_us">Contact</a></li>
+         <div class="darkM">
+            <input type="checkbox" name="toggle" id="darkModeToggle" value="on">
+         </div>
+      </ul>
+   </nav>
+   
+   
+   
+   
+   
+   
+   
+   
+<div class="user_title " id="typewriter">
+  VOLUNTEER PAGE !
+</div>
+   
+ <p class="volun_p">
+We’re thrilled to welcome you to our volunteer platform! Here, you can share your details, showcase your handwriting, and take part in meaningful writing tasks that help students complete their assignments on time. Beyond gaining experience, you also have the opportunity to earn through your work, with rewards based on the type and timeliness of each task.<br>
+Communication and task updates will be handled directly through <strong>WhatsApp</strong> to ensure smooth coordination and quick responses. <br>
+Simply fill in the form below, upload your handwriting sample, and we’ll review your submission. <strong>Selected volunteers will be added to our main team </strong>and receive regular assignments to work on — professionally, efficiently, and with purpose.
+</p>
+  
+  
+<p class="form_intro">
+Please fill in the required fields carefully so we can review your application efficiently and assess your handwriting sample accurately. This helps us ensure you’re matched with suitable writing opportunities and tasks.
+</p>
+  
+  
+  
+<!-- Basic Details Section -->
+<div class="form_section">
+  <h2 class="form_heading">Basic Details</h2>
+  <form id="userDetailsForm">
+    <div class="input_group">
+       
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+    </div>
+
+    <div class="input_group">
+      <label for="email">Email ID</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email ID" required>
+    </div>
+    
+    <div class="input_group">
+       <label for="contactNo">Contact No</label>
+       <input type="number" id="contactNo" name="contactNo" placeholder="Enter your contact number" required>
+    </div>
+    
+    <div class="input_group">
+  <label for="address">Complete Address</label>
+  <textarea id="address" name="address" placeholder="Enter your complete residential or correspondence address. This will be used for task coordination and verification purposes." rows="4" required></textarea>
+</div>
+    </from>
+</div>   
+   
+
+
+   
+   
+<!-- HANDWRITING SAMPLE UPLOAD SECTION -->
+<div class="form_section">
+  <h2 class="form_heading">Handwriting Sample</h2>
+  <p class="form_note">
+    Please upload a clear photo or scanned copy of a handwritten paragraph. This will help us assess your handwriting quality before assigning any tasks.
+  </p>
+  <!-- Handwriting Upload -->
+  <div class="handwriting_upload">
+    <label for="assignment_pdf" class="upload_label">Choose PDF</label>
+    <input type="file" id="assignment_pdf" name="assignment_pdf" accept=".jpg,.jpeg,.png,.pdf" required>  
+      <div id="handwriting-confirmation"class="file-confirmation"></div>
+  </div>
+</div>
+
+
+
+
+
+<!-- PAYMENT DETAILS SECTION -->
+<div class="form_section">
+  <h2 class="form_heading">Payment Details</h2>
+  <p class="form_note">
+    Please provide your preferred payment method for receiving earnings. You can either upload your QR code or enter your UPI ID or payment link below.
+  </p>
+
+  <!-- QR Upload -->
+  <div class="handwriting_upload">
+    <label for="payment_qr" class="upload_label">Upload QR Code</label>
+    <input type="file" id="payment_qr" name="payment_qr" accept=".jpg,.jpeg,.png,.pdf">
+    <div id="qr-confirmation" class="file-confirmation"></div>
+  </div>
+
+  <!-- Payment Link or UPI ID -->
+  <div class="input_group">
+    <label for="payment_link"><strong>Payment Link / UPI ID</strong></label>
+   <textarea id="payment_link" name="payment_link"placeholder="Enter your UPI ID or payment link (e.g. yourname@upi or paytm.me/yourlink)" rows="3"></textarea>
+  </div>
+</div>
+
+
+   
+   
+   
+<!-- VERIFICATION DOCUMENT UPLOAD SECTION -->
+<div class="form_section">
+  <h2 class="form_heading">Verification Document</h2>
+  <p class="form_note">
+    Please upload a clear photo or scanned copy of your College or School ID or a valid Government ID. This is required for verification purposes before assigning any tasks.
+  </p>
+  <!-- Verification Document Upload -->
+  <div class="handwriting_upload">
+    <label for="verification_doc" class="upload_label">Upload Verification Document</label>
+    <input type="file" id="verification_doc" name="verification_doc" accept=".jpg,.jpeg,.png,.pdf" required>
+    <div id="verification-confirmation" class="file-confirmation"></div>
+  </div>
+</div>
+   
+
+<!-- PAYMENT & DELIVERY DETAILS -->
+<div class="form_section" id="payment_delivery_section">
+  <h2 class="form_heading">Payment & Delivery Details</h2>
+
+  <p class="form_note">
+    Assignly provides clear and timely compensation for all volunteer roles. The table below summarises the pay structure and delivery allowance. Please read carefully to understand how earnings and delivery reimbursements are calculated.
+  </p>
+
+  <!-- Summary paragraph -->
+  <p class="user_p">
+    <strong class="theory_c">Writing Volunteers</strong> receive <strong>70% of the total assignment amount</strong> for completing handwriting tasks to the required standard, with an additional <strong>5% bonus</strong> for early and high-quality submissions — reaching up to <strong>75%</strong> in total.
+    <br><br>
+    <strong class="theory_c">Delivery Volunteers</strong> are paid a delivery allowance: <strong>₹50</strong> for trips within <strong>5 km</strong>, and an additional <strong>₹8 per km</strong> for each kilometre beyond 5 km.
+    <br><br>
+    <strong class="theory_c">All-Round Volunteers</strong> who handle both writing and delivery tasks receive <strong>85% of the total assignment amount</strong>, with an additional <strong>5% bonus</strong> for early completion and delivery — bringing their total potential payout up to <strong>90%</strong>.
+    <br><br>
+    A punctuality/quality reward is available for volunteers who submit or deliver work properly and on time.
+  </p>
+
+  <!-- Payment Table -->
+<div class="table_wrap">
+  <table class="payment_table" aria-describedby="payment-explainer">
+    <thead>
+      <tr>
+        <th>Volunteer Type</th>
+        <th>Role</th>
+        <th>Payment</th>
+        <th>Bonus</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Writing Volunteer</td>
+        <td>Write assignments neatly & on time</td>
+        <td><strong>70%</strong> of assignment value</td>
+        <td><strong>(+5%)</strong> for early & quality submission</td>
+      </tr>
+
+      <tr>
+        <td>Delivery Volunteer</td>
+        <td>Collect & deliver assignments</td>
+        <td><strong>₹50 (≤5 km) + ₹8/km beyond</strong></td>
+        <td>For proper & timely delivery</td>
+      </tr>
+
+      <tr>
+        <td>All-Round Volunteer</td>
+        <td>Write & deliver assignments</td>
+        <td><strong>85%</strong> of assignment value</td>
+        <td><strong>(+5%)</strong> for early writing & delivery</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  <p id="payment-explainer" class="form_note" style="margin-top:12px;">
+    Payments are processed after verification of work. For delivery tasks, volunteers must confirm the delivery of the hardcopy. If you have a preferred payout method, include it in your profile above in the registration form.
+  </p>
+</div>
+
+
+<!-- Volunteer Role Selection -->
+<!-- Volunteer Role Selection -->
+<div class="form_section">
+  <h2 class="form_heading">Select Your Role</h2>
+  <p class="form_note">
+    Choose the type of volunteer work you’d like to take up below.  
+    You can either focus on writing, help with deliveries, or handle both for higher rewards.
+  </p>
+
+  <div class="volunteer_options">
+    <button type="button" class="volunteer_btn" data-role="writer">Writing Volunteer</button>
+    <button type="button" class="volunteer_btn" data-role="delivery">Delivery Volunteer</button>
+    <button type="button" class="volunteer_btn" data-role="allround">All-Round Volunteer</button>
+  </div>
+</div>
+
+
+
+
+<!-- Important Info Before Register -->
+<div class="form_section">
+  <p class="register_theo">
+    ⚠️ <strong>Important:</strong> Please review all your details carefully.<br>
+    Once ready, click the <strong>Register</strong> button below to submit your information via <strong>Telegram</strong> and generate your <strong>Unique Volunteer ID</strong>.
+  </p>
+  
+  
+  
+<div class="alig">
+  
+<div class="container_regis" onclick="this.classList.toggle('active')" id="register_btn">
+  <span class="text"><strong>REGISTER</strong></span>
+  <svg class="fingerprint fingerprint-base" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+    <g class="fingerprint-out" fill="none" stroke-width="2" stroke-linecap="round">
+      <path
+            class="odd" d="m 25.117139,57.142857 c 0,0 -1.968558,-7.660465 -0.643619,-13.149003 1.324939,-5.488538 4.659682,-8.994751 4.659682,-8.994751" />
+      <path
+            class="odd" d="m 31.925369,31.477584 c 0,0 2.153609,-2.934998 9.074971,-5.105078 6.921362,-2.17008 11.799844,-0.618718 11.799844,-0.618718" />
+      <path
+            class="odd" d="m 57.131213,26.814448 c 0,0 5.127709,1.731228 9.899495,7.513009 4.771786,5.781781 4.772971,12.109204 4.772971,12.109204" />
+      <path
+            class="odd" d="m 72.334009,50.76769 0.09597,2.298098 -0.09597,2.386485" />
+      <path
+            class="even" d="m 27.849282,62.75 c 0,0 1.286086,-1.279223 1.25,-4.25 -0.03609,-2.970777 -1.606117,-7.675266 -0.625,-12.75 0.981117,-5.074734 4.5,-9.5 4.5,-9.5" />
+      <path
+            class="even" d="m 36.224282,33.625 c 0,0 8.821171,-7.174484 19.3125,-2.8125 10.491329,4.361984 11.870558,14.952665 11.870558,14.952665" />
+      <path
+            class="even" d="m 68.349282,49.75 c 0,0 0.500124,3.82939 0.5625,5.8125 0.06238,1.98311 -0.1875,5.9375 -0.1875,5.9375" />
+      <path
+            class="odd" d="m 31.099282,65.625 c 0,0 1.764703,-4.224042 2,-7.375 0.235297,-3.150958 -1.943873,-9.276886 0.426777,-15.441942 2.370649,-6.165056 8.073223,-7.933058 8.073223,-7.933058" />
+      <path
+            class="odd" d="m 45.849282,33.625 c 0,0 12.805566,-1.968622 17,9.9375 4.194434,11.906122 1.125,24.0625 1.125,24.0625" />
+      <path
+            class="even" d="m 59.099282,70.25 c 0,0 0.870577,-2.956221 1.1875,-4.5625 0.316923,-1.606279 0.5625,-5.0625 0.5625,-5.0625" />
+      <path
+            class="even" d="m 60.901059,56.286612 c 0,0 0.903689,-9.415996 -3.801777,-14.849112 -3.03125,-3.5 -7.329245,-4.723939 -11.867187,-3.8125 -5.523438,1.109375 -7.570313,5.75 -7.570313,5.75" />
+      <path
+            class="even" d="m 34.072577,68.846248 c 0,0 2.274231,-4.165782 2.839205,-9.033748 0.443558,-3.821814 -0.49394,-5.649939 -0.714206,-8.05386 -0.220265,-2.403922 0.21421,-4.63364 0.21421,-4.63364" />
+      <path
+            class="odd" d="m 37.774165,70.831845 c 0,0 2.692139,-6.147592 3.223034,-11.251208 0.530895,-5.103616 -2.18372,-7.95562 -0.153491,-13.647655 2.030229,-5.692035 8.108442,-4.538898 8.108442,-4.538898" />
+      <path
+            class="odd" d="m 54.391174,71.715729 c 0,0 2.359472,-5.427681 2.519068,-16.175068 0.159595,-10.747388 -4.375223,-12.993087 -4.375223,-12.993087" />
+      <path
+            class="even" d="m 49.474282,73.625 c 0,0 3.730297,-8.451831 3.577665,-16.493718 -0.152632,-8.041887 -0.364805,-11.869326 -4.765165,-11.756282 -4.400364,0.113044 -3.875,4.875 -3.875,4.875" />
+      <path
+            class="even" d="m 41.132922,72.334447 c 0,0 2.49775,-5.267079 3.181981,-8.883029 0.68423,-3.61595 0.353553,-9.413359 0.353553,-9.413359" />
+      <path
+            class="odd" d="m 45.161782,73.75 c 0,0 1.534894,-3.679847 2.40625,-6.53125 0.871356,-2.851403 1.28125,-7.15625 1.28125,-7.15625" />
+      <path
+            class="odd" d="m 48.801947,56.125 c 0,0 0.234502,-1.809418 0.109835,-3.375 -0.124667,-1.565582 -0.5625,-3.1875 -0.5625,-3.1875" />
+    </g>
+  </svg>
+  <svg class="fingerprint fingerprint-active" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+    <g class="fingerprint-out" fill="none" stroke-width="2" stroke-linecap="round">
+      <path
+            class="odd" d="m 25.117139,57.142857 c 0,0 -1.968558,-7.660465 -0.643619,-13.149003 1.324939,-5.488538 4.659682,-8.994751 4.659682,-8.994751" />
+      <path
+            class="odd" d="m 31.925369,31.477584 c 0,0 2.153609,-2.934998 9.074971,-5.105078 6.921362,-2.17008 11.799844,-0.618718 11.799844,-0.618718" />
+      <path
+            class="odd" d="m 57.131213,26.814448 c 0,0 5.127709,1.731228 9.899495,7.513009 4.771786,5.781781 4.772971,12.109204 4.772971,12.109204" />
+      <path
+            class="odd" d="m 72.334009,50.76769 0.09597,2.298098 -0.09597,2.386485" />
+      <path
+            class="even" d="m 27.849282,62.75 c 0,0 1.286086,-1.279223 1.25,-4.25 -0.03609,-2.970777 -1.606117,-7.675266 -0.625,-12.75 0.981117,-5.074734 4.5,-9.5 4.5,-9.5" />
+      <path
+            class="even" d="m 36.224282,33.625 c 0,0 8.821171,-7.174484 19.3125,-2.8125 10.491329,4.361984 11.870558,14.952665 11.870558,14.952665" />
+      <path
+            class="even" d="m 68.349282,49.75 c 0,0 0.500124,3.82939 0.5625,5.8125 0.06238,1.98311 -0.1875,5.9375 -0.1875,5.9375" />
+      <path
+            class="odd" d="m 31.099282,65.625 c 0,0 1.764703,-4.224042 2,-7.375 0.235297,-3.150958 -1.943873,-9.276886 0.426777,-15.441942 2.370649,-6.165056 8.073223,-7.933058 8.073223,-7.933058" />
+      <path
+            class="odd" d="m 45.849282,33.625 c 0,0 12.805566,-1.968622 17,9.9375 4.194434,11.906122 1.125,24.0625 1.125,24.0625" />
+      <path
+            class="even" d="m 59.099282,70.25 c 0,0 0.870577,-2.956221 1.1875,-4.5625 0.316923,-1.606279 0.5625,-5.0625 0.5625,-5.0625" />
+      <path
+            class="even" d="m 60.901059,56.286612 c 0,0 0.903689,-9.415996 -3.801777,-14.849112 -3.03125,-3.5 -7.329245,-4.723939 -11.867187,-3.8125 -5.523438,1.109375 -7.570313,5.75 -7.570313,5.75" />
+      <path
+            class="even" d="m 34.072577,68.846248 c 0,0 2.274231,-4.165782 2.839205,-9.033748 0.443558,-3.821814 -0.49394,-5.649939 -0.714206,-8.05386 -0.220265,-2.403922 0.21421,-4.63364 0.21421,-4.63364" />
+      <path
+            class="odd" d="m 37.774165,70.831845 c 0,0 2.692139,-6.147592 3.223034,-11.251208 0.530895,-5.103616 -2.18372,-7.95562 -0.153491,-13.647655 2.030229,-5.692035 8.108442,-4.538898 8.108442,-4.538898" />
+      <path
+            class="odd" d="m 54.391174,71.715729 c 0,0 2.359472,-5.427681 2.519068,-16.175068 0.159595,-10.747388 -4.375223,-12.993087 -4.375223,-12.993087" />
+      <path
+            class="even" d="m 49.474282,73.625 c 0,0 3.730297,-8.451831 3.577665,-16.493718 -0.152632,-8.041887 -0.364805,-11.869326 -4.765165,-11.756282 -4.400364,0.113044 -3.875,4.875 -3.875,4.875" />
+      <path
+            class="even" d="m 41.132922,72.334447 c 0,0 2.49775,-5.267079 3.181981,-8.883029 0.68423,-3.61595 0.353553,-9.413359 0.353553,-9.413359" />
+      <path
+            class="odd" d="m 45.161782,73.75 c 0,0 1.534894,-3.679847 2.40625,-6.53125 0.871356,-2.851403 1.28125,-7.15625 1.28125,-7.15625" />
+      <path
+            class="odd" d="m 48.801947,56.125 c 0,0 0.234502,-1.809418 0.109835,-3.375 -0.124667,-1.565582 -0.5625,-3.1875 -0.5625,-3.1875" />
+    </g>
+  </svg>
+  <svg class="ok" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M34.912 50.75l10.89 10.125L67 36.75" fill="none" stroke="#fff" stroke-width="6"/></svg>
+</div>
+</div><!-- end of alig -->
+
+
+
+
+
+
+
+</div><!-- end of the div section -->
+
+
+
+
+<div class="form_section_last" id="last_div">
+   <p id="uniqueIdDisplay" class="uniqueIdDisplay"></p>
+<p id="infoMessage" class="infoMessage"></p>
+
+</div>
+
+
+
+
+
+
+
+
+   
+<footer class="footer">
+  	 <div class="container">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 			<h4>Assignly</h4>
+  	 			<ul>
+  	 				<li><a href="home.html#about_us">about us</a></li>
+  	 				<li><a href="home.html#service">our services</a></li>
+  	 				<li><a href="home.html#privacy_policy">privacy policy</a></li>
+  	 				<li><a href="home.html#contact_us">contact us</a></li>
+  	 				<li><a href="home.html#faq">FAQ</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>Reach us at</h4>
+  	 			<div class="social-links">
+  	 				<a href="https://t.me/assignly"><i class="fab fa-telegram-plane"></i></a>
+  	 				<a href="https://www.instagram.com/assignly_?igsh=amZ0ZjFxcTV4cHI="><i class="fab fa-instagram"></i></a>
+  	 				<a href="mailto:assignly.helpline@gmail.com"><i class="fas fa-envelope"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+  	 </div>
+  	 <div class="copyright">
+   © 2025 <span class="brand">Assignly</span>. All rights reserved.
+</div>
+  </footer>
+    
+   <script src="script1.js"></script>
+   
+</body>
+</html>

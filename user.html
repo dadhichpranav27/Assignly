@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta charset="UTF-8">
+   <title>Assignly</title>
+   <link rel="icon" type="image/png" sizes="32x32" href="assignly-favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assignly-favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assignly-favicon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assignly-favicon.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assignly-favicon.png">
+<link rel="shortcut icon" href="assignly-favicon.png">
+   <link rel="stylesheet" href="style2.css">
+   <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;700&family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=download" />
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&display=swap" rel="stylesheet">
+
+</head>
+<body>
+   <!-- Loader -->
+   <div class="loader_wrapper">
+     <div class="hourglass"></div>
+   </div>
+
+   <!-- Navbar -->
+   <div class="container_body">
+   <nav>
+      <ul class="sidenav">
+         <li class="close-btn"onclick="hideSidenav()">
+               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+                  <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+               </svg>
+            
+         </li>
+         <li><a href="home.html#">Home</a></li>
+         <li><a href="home.html#about_us">About</a></li>
+         <li><a href="home.html#contact_us">Contact</a></li>
+         <li><a href="user.html">User Page</a></li>
+         <li><a href="volunteer.html">Volunteer Page</a></li>
+      </ul>
+      <ul>
+         <li class="menu_btn" onclick="showSidenav()">
+            <a href="#">
+               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+                  <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+               </svg>
+            </a>
+         </li>
+         <li class="proj_name"><a href="home.html#">ASSIGNLY</a></li>
+         <li class="hideOnMobile"><a href="home.html#">Home</a></li>
+         <li class="hideOnMobile"><a href="home.html#about_us">About</a></li>
+         <li class="hideOnMobile"><a href="home.html#contact_us">Contact</a></li>
+         <div class="darkM">
+            <input type="checkbox" name="toggle" id="darkModeToggle" value="on">
+         </div>
+      </ul>
+   </nav>
+  <div class="user_title " id="typewriter">
+  USER PAGE !
+  </div>
+  <p class="user_p">
+We’re excited to help you with your assignments. On this page, you can choose from a variety of handwriting samples to make your work truly personalised. We offer flexible payment options based on urgency and assignment length.
+If you choose to make the full payment upfront, you’ll automatically receive a 20% discount on your total cost. Alternatively, you can pay 50% now and the remaining 50% after delivery.<br>
+You can submit us these details given below through <strong>Telegram</strong> or by <strong>WhatsApp</strong>. Please note that if you choose WhatsApp, you’ll need to send your assignment file and payment receipt manually, while Telegram allows direct uploads for a quicker and more convenient process.<br>
+Simply upload your file, select your preferences, and we’ll ensure your handwritten assignment is completed neatly and delivered on time.
+  </p>
+  
+  
+  <p class="form_intro">
+ Please fill in the required fields carefully so we can process your request smoothly and deliver your handwritten work exactly as you prefer.
+</p>
+
+
+
+
+
+  <!-- Basic Details Section -->
+<div class="form_section">
+  <h2 class="form_heading">Basic Details</h2>
+  <form id="userDetailsForm">
+    <div class="input_group">
+       
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+    </div>
+
+    <div class="input_group">
+      <label for="email">Email ID</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email ID" required>
+    </div>
+
+    <div class="input_group">
+      <label for="college">College /School Name</label>
+      <input type="text" id="college" name="college" placeholder="Enter your college / school name" required>
+    </div>
+
+    <div class="input_group">
+      <label for="collegeID">College / School ID Number</label>
+      <input type="text" id="collegeID" name="collegeID" placeholder="Enter your college / school ID number" required>
+    </div>
+    
+    <div class="input_group">
+       <label for="contactNo">Contact No</label>
+       <input type="number" id="contactNo" name="contactNo" placeholder="Enter your contact number" required>
+    </div>
+    
+    <div class="input_group">
+  <label for="address">Hardcopy Delivery Address</label>
+  <textarea id="address" name="address" placeholder="Enter the complete address where you want your handwritten hardcopy assignment to be delivered. Please be as precise as possible." rows="5" required></textarea>
+</div>
+     
+      
+  </form>
+</div>
+
+
+
+
+
+  <!-- Handwriting Sample Selection -->
+<div class="form_section">
+  <h2 class="form_heading">Choose Your Handwriting Sample</h2>
+  <p class="form_note">
+    Select a handwriting style that best matches your preference. Your assignment will be written using this style.
+  </p>
+
+  <div class="handwriting_grid">
+    <label class="handwriting_option">
+      <input type="radio" name="handwriting" value="sample1" required>
+      <img src="handwriting1.jpg" alt="Handwriting Sample 1">
+    </label>
+
+    <label class="handwriting_option">
+      <input type="radio" name="handwriting" value="sample2">
+      <img src="handwriting2.jpg" alt="Handwriting Sample 2">
+      
+    </label>
+
+    <label class="handwriting_option">
+      <input type="radio" name="handwriting" value="sample3">
+      <img src="handwriting3.jpg" alt="Handwriting Sample 3">
+      
+    </label>
+
+    <label class="handwriting_option">
+      <input type="radio" name="handwriting" value="sample4">
+      <img src="handwriting4.jpg" alt="Handwriting Sample 4">
+    </label>
+  </div>
+</div>
+
+
+
+<!-- Assignment Type Selection -->
+<div class="form_section">
+  <h2 class="form_heading">Select Assignment Type</h2>
+  <p class="form_note">
+    Choose the type of assignment you want us to prepare.
+  </p>
+
+  <div class="assignment_grid">
+    <label class="assignment_option">
+      <input type="radio" name="assignment_type" value="see_write" required>
+      <span>See & Write Assignment</span>
+    </label>
+
+    <label class="assignment_option">
+      <input type="radio" name="assignment_type" value="research_write">
+      <span>Research & Write Assignment</span>
+    </label>
+
+    <label class="assignment_option">
+      <input type="radio" name="assignment_type" value="custom">
+      <span>Custom Assignment</span>
+    </label>
+    </div>
+</div>  
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- SEE & WRITE SECTION -->
+<div class="assignment_details" id="seeSection">
+  
+  <h2 class="asstype_intro">See & Write</h2>
+  <p class="asstype_intro_para" style="text-align:center; color:#555; font-size:1rem; margin-bottom:25px;">
+  This option is for assignments where you provide the PDF, and we’ll replicate it exactly as is, with no additional research or alterations.
+</p>
+  
+<!-- PDF Upload Section -->
+<div class="form_section">
+  <h2 class="form_heading">Upload Your Assignment.</h2>
+  <p class="form_note">
+    Upload your assignment PDF so that we can help you get your work done.
+  </p>
+
+  <!-- File Upload -->
+  <div class="file_upload">
+    <label for="assignment_pdf" class="upload_label">Choose PDF</label>
+    <input type="file" id="assignment_pdf" name="assignment_pdf" accept=".pdf" required>  
+      <div id="pdf-confirmation"class="file-confirmation"></div>
+  </div>
+</div>
+
+
+<!-- Payment Options & Urgency Section -->
+<div class="form_section">
+  <h2 class="form_heading">Payment & Assignment Urgency</h2>
+  <p class="form_note">
+    Choose your assignment urgency and payment option. Full payment upfront gives you a 20% discount, while 50% upfront allows you to pay the remaining 50% after delivery.
+  </p>
+
+  <!-- Urgency Selection -->
+  <div class="urgency_selection">
+    <label for="urgency" class="form_label">Select Urgency:</label>
+    <select id="urgency" name="urgency" required>
+      <option value="">-- Select --</option>
+      <option value="1">Tomorrow</option>
+      <option value="2-3">Within 3 days</option>
+      <option value="4-7">Within a week</option>
+      <option value="8-14">Within two weeks</option>
+     <option value="within_month">Within a month</option>
+    </select>
+  </div>
+
+  <!-- Number of Pages -->
+  <label for="pages">Number of Pages (Approx. 600 words = 2 pages):</label>
+  <input type="number" id="pages" name="pages" min="1" class="number_input">
+  
+    <!-- Payment Method -->
+  <div class="payment_method">
+    <label class="form_label">Payment Method:</label>
+    <label><input type="radio" name="payment" value="full" required> Full Payment (20% off)</label>
+    <label><input type="radio" name="payment" value="installments"> 50% Now, 50% After Delivery</label>
+  </div>
+  
+ <div class="delivery_highlight">
+  <strong>₹50 Delivery Charge</strong> is added for secure doorstep handover 📦
+</div>
+ 
+   <!-- Total Amount To Be Paid -->
+<div class="total_container">
+  <label class="total_label">Total Amount:</label>
+  <span id="total_amount">₹0</span>
+</div>
+
+  <div class="installment_info" id="installment_info"></div>
+  
+  
+</div>
+
+<!-- Payment & Receipt Upload Section -->
+<div class="form_section payment-section">
+  <h2 class="form_heading">Pay And Upload Payment Receipt</h2>
+  <p class="form_note">
+    Make your payment using the scanner below, then upload a clear image of your receipt so we can verify it and start your assignment right away.
+  </p>
+  
+  <!-- QR Scanner Section -->
+  <div class="qr_section">
+    <h3 class="qr_heading">Scan to Pay</h3>
+    <img src="payment_qr.png" alt="Payment QR Code" class="qr_image">
+    <p class="qr_tip">Scan this QR code to make your payment securely.</p>
+  </div>
+  <div class="qr_amount" id="qr_amount"></div>
+
+   <!-- Receipt Upload Section -->
+  <div class="receipt_upload_section">
+    <label for="receipt_uplo" class="receipt_label">Upload Receipt</label>
+    <input type="file" name="payment_receipt" accept="image/*,.pdf" class="file_input" id="receipt_uplo">
+    <div id="receipt-confirmation" class="file-confirmation"></div>
+    <p class="form_tip">
+      Only image files (JPEG, PNG) or PDF are accepted. Ensure the receipt is clearly visible.
+    </p>
+  </div>
+</div>
+
+  
+
+
+<!-- Send Assignment Info Section -->
+<div class="send_info_section">
+  <h2 class="section_title">Send Your Assignment Info</h2>
+  <p class="section_subtitle">Choose whether you want to send your details via Telegram or WhatsApp:</p>
+  <div class="send_buttons_wrapper">
+    <!-- Telegram Button -->
+    <button class="send_btn telegram_btn">
+      <i class="fa-brands fa-telegram-plane"></i>
+      Send via Telegram
+    </button>
+    <div id="telegram-confirmation" class="file-confirmation"></div>
+
+    <!-- OR Badge -->
+    <div class="or_badge">OR</div>
+
+    <!-- WhatsApp Button -->
+    <button class="send_btn whatsapp_btn">
+      <i class="fa-brands fa-whatsapp"></i>
+      Send via WhatsApp
+    </button>
+    <div id="whatsapp-confirmation" class="file-confirmation"></div>
+  </div>
+  <br>
+  <p class="form_tip contact_tip">
+    Uploads are available only via Telegram. If you choose WhatsApp, you will need to send files manually.
+  </p>
+</div>
+
+
+  <!-- Hidden input to store the selected method -->
+  <input type="hidden" name="contact_method" id="contact_method_input" required>
+
+
+</div><!-- end of see and write section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- RESEARCH & WRITE SECTION -->
+<div class="assignment_details" id="researchSection">
+    
+      <h2 class="asstype_intro">Research & Write</h2>
+  <p class="asstype_intro_para" style="text-align:center; color:#555; font-size:1rem; margin-bottom:25px;">
+  This option is for assignments that require additional research and problem-solving. You provide the questions, and we’ll gather the necessary information and deliver the completed work.
+</p>
+  
+<!-- PDF Upload Section -->
+<div class="form_section">
+  <h2 class="form_heading">Upload Your Assignment.</h2>
+  <p class="form_note">
+    Upload your assignment PDF so that we can help you get your work done.
+  </p>
+
+  <!-- File Upload -->
+  <div class="file_upload">
+    <label for="res_assignment_pdf" class="upload_label">Choose PDF</label>
+    <input type="file" id="res_assignment_pdf" name="assignment_pdf" accept=".pdf" required>  
+      <div id="res_pdf-confirmation" class="file-confirmation">hshhvvv</div>
+  </div>
+</div>
+
+
+<!-- Payment Options & Urgency Section -->
+<div class="form_section">
+  <h2 class="form_heading">Payment & Assignment Urgency</h2>
+  <p class="form_note">
+    Choose your assignment urgency and payment option. Full payment upfront gives you a 20% discount, while 50% upfront allows you to pay the remaining 50% after delivery.
+  </p>
+
+  <!-- Urgency Selection -->
+  <div class="urgency_selection">
+    <label for="res_urgency" class="form_label">Select Urgency:</label>
+    <select id="res_urgency" name="res_urgency" required>
+      <option value="">-- Select --</option>
+      <option value="1">Tomorrow</option>
+      <option value="2-3">Within 3 days</option>
+      <option value="4-7">Within a Week</option>
+      <option value="8-14">Within two Weeks</option>
+      <option value="15-30">Within a Month</option>
+    </select>
+  </div>
+
+  <!-- Number of Pages -->
+  <label for="pages">Number of Pages (Approx. 600 words = 2 pages):</label>
+  <input type="number" id="res_pages" name="pages" min="1" class="number_input">
+  
+    <!-- Payment Method -->
+  <div class="payment_method">
+    <label class="form_label">Payment Method:</label>
+    <label><input type="radio" name="res_payment" value="res_full" required> Full Payment (20% off)</label>
+    <label><input type="radio" name="res_payment" value="res_installments"> 50% Now, 50% After Delivery</label>
+  </div>
+
+<div class="delivery_highlight">
+  <strong>₹50 Delivery Charge</strong> is added for secure doorstep handover 📦
+</div>
+  
+  <!-- Total Amount To Be Paid -->
+<div class="total_container">
+  <label class="total_label">Total Amount:</label>
+  <span id="res_total_amount">₹0</span>
+</div>
+
+  <div class="installment_info" id="res_installment_info"></div>
+  
+  
+</div>
+
+<!-- Payment & Receipt Upload Section -->
+<div class="form_section payment-section">
+  <h2 class="form_heading">Pay And Upload Payment Receipt</h2>
+  <p class="form_note">
+    Make your payment using the scanner below, then upload a clear image of your receipt so we can verify it and start your assignment right away.
+  </p>
+  
+  <!-- QR Scanner Section -->
+  <div class="qr_section">
+    <h3 class="qr_heading">Scan to Pay</h3>
+    <img src="payment_qr.png" alt="Payment QR Code" class="qr_image">
+    <p class="qr_tip">Scan this QR code to make your payment securely.</p>
+  </div>
+  <div class="qr_amount" id="res_qr_amount"></div>
+
+   <!-- Receipt Upload Section -->
+  <div class="receipt_upload_section">
+    <label for="res_receipt_uplo" class="receipt_label">Upload Receipt</label>
+    <input type="file" name="payment_receipt" accept="image/*,.pdf" class="file_input" id="res_receipt_uplo">
+    <div id="res_receipt-confirmation" class="file-confirmation"></div>
+    <p class="form_tip">
+      Only image files (JPEG, PNG) or PDF are accepted. Ensure the receipt is clearly visible.
+    </p>
+  </div>
+</div>
+
+  
+
+
+<!-- Send Assignment Info Section -->
+<div class="send_info_section">
+  <h2 class="section_title">Send Your Assignment Info</h2>
+  <p class="section_subtitle">Choose whether you want to send your details via Telegram or WhatsApp:</p>
+  <div class="send_buttons_wrapper">
+    <!-- Telegram Button -->
+    <button class="send_btn res_telegram_btn telegram_btn">
+      <i class="fa-brands fa-telegram-plane"></i>
+      Send via Telegram
+    </button>
+    <div id="res_telegram-confirmation" class="file-confirmation"></div>
+
+    <!-- OR Badge -->
+    <div class="or_badge">OR</div>
+
+    <!-- WhatsApp Button -->
+    <button class="send_btn res_whatsapp_btn whatsapp_btn">
+      <i class="fa-brands fa-whatsapp"></i>
+      Send via WhatsApp
+    </button>
+    <div id="res_whatsapp-confirmation" class="file-confirmation"></div>
+  </div>
+  <br>
+  <p class="form_tip contact_tip">
+    Uploads are available only via Telegram. If you choose WhatsApp, you will need to send files manually.
+  </p>
+</div>
+
+
+  <!-- Hidden input to store the selected method -->
+  <input type="hidden" name="contact_method" id="contact_method_input" required>
+
+
+</div><!-- end of research and write section -->
+
+
+
+
+
+
+
+
+
+
+<!-- CUSTOM ASSIGNMENT SECTION -->
+<div class="assignment_details" id="customSection">
+ 
+ 
+ <!-- ================= CUSTOM ASSIGNMENT SECTION ================= -->
+  <h2 class="form_heading">Custom Assignment</h2>
+  <p class="form_note">
+    Have something different in mind? Describe your custom assignment below with as much detail as possible.
+  </p>
+
+  <!-- Custom Textarea -->
+  <div class="form_group">
+    <label for="custom_message" class="form_label">Assignment Details</label>
+    <textarea id="custom_message" class="form_input" rows="6" placeholder="Please describe your custom assignment in detail — include subject, requirements, preferred format (typed/handwritten), and your expected deadline." required></textarea>
+  </div>
+
+  <!-- Send Button Section -->
+  <div class="send_buttons_wrapper">
+    <button id="custom_whatsappBtn" class="send_btn whatsapp_btn">
+      <i class="fab fa-whatsapp"></i> Send via WhatsApp
+    </button>
+    <p id="custom_sendingMessage" class="sending_message" style="display:none;">Sending...</p>
+  </div>
+
+<!-- ================= END OF CUSTOM ASSIGNMENT SECTION ================= -->
+ 
+ 
+ 
+ 
+</div><!-- end of custom section -->
+<br>
+
+
+
+
+
+
+
+</div> <!-- form section div end -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div><!-- END OF CONTAINER BODY DIV  --> 
+   <footer class="footer">
+  	 <div class="container">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 			<h4>Assignly</h4>
+  	 			<ul>
+  	 				<li><a href="home.html#about_us">about us</a></li>
+  	 				<li><a href="home.html#service">our services</a></li>
+  	 				<li><a href="home.html#privacy_policy">privacy policy</a></li>
+  	 				<li><a href="home.html#contact_us">contact us</a></li>
+  	 				<li><a href="home.html#faq">FAQ</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>Reach us at</h4>
+  	 			<div class="social-links">
+  	 				<a href="https://t.me/assignly"><i class="fab fa-telegram-plane"></i></a>
+  	 				<a href="https://www.instagram.com/assignly_?igsh=amZ0ZjFxcTV4cHI="><i class="fab fa-instagram"></i></a>
+  	 				<a href="mailto:assignly.helpline@gmail.com"><i class="fas fa-envelope"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+  	 </div>
+  	 <div class="copyright">
+   © 2025 <span class="brand">Assignly</span>. All rights reserved.
+</div>
+  </footer>
+   <script src="script2.js"></script>
+   
+</body>
+</html>

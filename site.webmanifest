@@ -1,0 +1,16 @@
+{
+  "name": "Assignly",
+  "short_name": "Assignly",
+  "icons": [
+    {
+      "src": "assignly-favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#e3f2ff",
+  "theme_color": "#158cff"
+}

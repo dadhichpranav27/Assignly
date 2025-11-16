@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+   <meta charset="UTF-8">
+   <title>Assignly</title>
+   <link rel="icon" type="image/png" sizes="32x32" href="assignly-favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assignly-favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assignly-favicon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assignly-favicon.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assignly-favicon.png">
+<link rel="shortcut icon" href="assignly-favicon.png">
+<link rel="manifest" href="site.webmanifest">
+   <link rel="stylesheet" href="style0.css">
+   <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;700&family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=download" />
+   
+</head>
+<body>
+   <!-- Loader -->
+   <div class="loader_wrapper">
+     <div class="hourglass"></div>
+   </div>
+
+   <!-- Navbar -->
+   <div class="container_body">
+   <nav>
+      <ul class="sidenav">
+         <li class="close-btn"onclick="hideSidenav()">
+            
+               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+                  <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+               </svg>
+            
+         </li>
+         <li><a href="#">Home</a></li>
+         <li><a href="#about_us">About</a></li>
+         <li><a href="#contact_us">Contact</a></li>
+         <li><a href="user.html">User Page</a></li>
+         <li><a href="volunteer.html">Volunteer Page</a></li>
+         
+      </ul>
+      <ul>
+         <li class="menu_btn" onclick="showSidenav()">
+            <a href="#">
+               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+p                  <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+               </svg>
+            </a>
+         </li>
+         <li class="proj_name"><a href="#">ASSIGNLY</a></li>
+         <li class="hideOnMobile"><a href="#">Home</a></li>
+         <li class="hideOnMobile"><a href="#about_us">About</a></li>
+         <li class="hideOnMobile"><a href="#contact_us">Contact</a></li>
+         <li class="hideOnMobile"><a href="user.html">User Page</a></li>
+         <li class="hideOnMobile"><a href="volunteer.html">Volunteer Page</a></li>
+         
+         
+         <div class="darkM">
+            <input type="checkbox" name="toggle" id="darkModeToggle" value="on">
+         </div>
+      </ul>
+   </nav>
+   <!-- Logo Animation -->
+   <div class="logo_ani">
+      <img src="Image4.png" alt="Image1">
+      <img src="Image3.png" alt="Image2">
+      <img src="Image2.png" alt="Image3">
+      <img src="Image1.png" alt="Image4">
+   </div>
+   
+   
+   
+   <div class="question">
+      What is Assignly ?
+   </div>
+   <p>
+      Assignly is your reliable solution for college or school assignments. We bridge the gap by turning digital files into neat handwritten hard copies, delivered on time. Students get stress-free submissions, while volunteers earn by writing. Smart help for every deadline, right where you need it.
+   </p>
+   <div class="question">
+      Why Assignly?
+   </div>
+   <p>
+      Assignly makes completing your assignments effortless and reliable. We provide high-quality, ready-to-use solutions tailored to your needs, saving time and stress. With Assignly, deadlines are never a worry, and you can focus on learning while we handle the work efficiently.
+   </p>
+   
+    
+    <div class="choice">
+    <div class="choice_theory" >
+       <div class="choice_title">
+         Choose your role:
+         </div>
+    </div>
+
+    <div class="volun_flip">
+      <div class="volun_flip_inner">
+        <div class="volun_front">Volunteer</div>
+        <div class="volun_back">           
+           <p class="volun_desc">
+  Join Assignly as a Volunteer and earn money by writing assignments.
+</p>
+<a href="volunteer.html" class="volun_btn">Join Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="choice_theory">
+         
+         <div class="choice_theory" id="or_divider">
+         OR
+        </div>
+         
+    </div>
+    <div class="user_flip">
+      <div class="user_flip_inner">
+        <div class="user_front">User</div>
+        <div class="user_back">
+           <p class="user_desc">
+  Join Assignly as a member and get your assignments done with ease.
+</p>
+<a href="user.html"class="user_btn">Use Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  <div id="about_us" class="question">
+    About Us
+</div>
+<p>
+Assignly was created to make completing assignments and projects simpler, faster, and stress-free. While many platforms only provide digital copies, we focus on delivering neatly written hard copies—helping users meet deadlines without the hassle of doing it themselves. Our platform connects two groups: those who need their assignments written, and those who want to earn by volunteering their time and effort. This balance ensures reliable service, fair opportunity, and consistent quality. Assignly is built on trust, convenience, and timely delivery, making it a smart solution for anyone looking to save time and get work done efficiently. 
+<br>
+<br>
+Assignly was founded and is operated by <strong>Pranav Dadhich</strong>, who envisioned a platform that makes assignment completion effortless while maintaining high standards of quality and reliability.
+
+</p>
+  
+  
+  <div id="service" class="question">
+        Our Services
+  </div>
+  <p>
+At Assignly, our goal is to make assignment and project completion smooth, reliable, and stress-free. We bridge the gap between digital work and handwritten hard copies by ensuring every submission is neatly prepared, authentic, and delivered on time. Users can share their files, while our network of writers takes care of turning them into high-quality hard copies ready for submission. Alongside this, we empower volunteers with an opportunity to earn by completing assignments and helping others meet deadlines. Our services are built around trust, quality, and convenience, ensuring that every user gets exactly what they need, when they need it.<br>
+Key Highlights:<br>
+•Handwritten hard copies delivered on time<br>
+•Simple process: upload files, get them completed<br>
+•Reliable quality with neat presentation<br>
+•Volunteers earn by writing assignments/projects<br>
+•Focus on deadlines and stress-free service<br>
+•Built on trust, convenience, and efficiency<br>
+     </p>
+     
+     
+     <div id="privacy_policy" class="question">
+  Privacy policy
+</div>
+<p>
+  We value your trust and take your privacy seriously. 
+  Our privacy policy explains how we collect, use, and protect your 
+  information when you use our services.  
+  You can download the full document below for complete details.<br>
+<a href="Privacy Policy.pdf" class="btn btn-primary" download>
+  <span class="btn-txt">Download</span>
+  <span class="material-symbols-outlined">download</span>
+</a>
+ </p>    
+     
+  
+  
+  <div id="contact_us" class="question">
+     Contact Us
+  </div>
+  <p>
+     Have a question, need support, or want to get started? We’re just an email away. Reach out anytime and we’ll respond quickly to assist you.
+     
+     <br>
+     
+     
+     Mail At : 
+<a href="mailto:assignly.helpline@gmail.com">assignly.helpline@gmail.com</a><br>
+Whatsapp At : 
+<a href="tel:8100375230">+918100375230</a>
+ <br><br>
+
+<strong>For inquiries or partnership opportunities, you can reach Pranav Dadhich <a href="https://wa.me/918100375230" target="_blank"style="text-decoration: none; color: #158cff;">here</a>.</strong>
+  </p>
+  
+  
+  
+  
+  <div id="faq" class="question">
+     FAQ
+  </div>
+  <div class="faq-container">
+    
+
+    <div class="faq">
+      <input type="checkbox" id="faq1">
+      <label for="faq1"> What is Assignly?</label>
+      <div class="content">
+        <p>Assignly is a platform that simplifies assignment and project completion. Unlike most services that stop at providing digital or soft copies, we focus on delivering neatly handwritten hard copies—authentic, ready-to-submit, and on time.</p>
+      </div>
+    </div>
+
+    <div class="faq">
+      <input type="checkbox" id="faq2">
+      <label for="faq2">How does Assignly work?</label>
+      <div class="content">
+        <p>Users upload their files, volunteers take up the task and write it neatly on high-quality sheets, and the handwritten copy is delivered within the required deadline.</p>
+      </div>
+    </div>
+
+    <div class="faq">
+      <input type="checkbox" id="faq3">
+      <label for="faq3"> Who can use Assignly?</label>
+      <div class="content">
+        <p>Anyone who needs handwritten work, such as assignments, reports, notes, or project documentation, can use Assignly. Volunteers can also join to earn by writing.</p>
+      </div>
+    </div>
+
+    <div class="faq">
+      <input type="checkbox" id="faq4">
+      <label for="faq4"> What work can Assignly handle?</label>
+      <div class="content">
+        <p>Assignly can handle a wide range of tasks, including:<br>
+•Assignments<br>
+•Reports<br>
+•Notes<br>
+•Written documentation for projects or presentations<br>
+If it requires clean, handwritten hard copies, Assignly can take care of it.</p>
+      </div>
+    </div>
+    
+    <div class="faq">
+      <input type="checkbox" id="faq5">
+      <label for="faq5"> How do I place an order?</label>
+      <div class="content">
+        <p>To place an order, simply share your files with us and specify your requirements, including the deadline. Once the request is received, a volunteer is assigned, and your handwritten work is completed and delivered on time.</p>
+      </div>
+    </div>
+    
+    <div class="faq">
+      <input type="checkbox" id="faq6">
+      <label for="faq6"> How much does it cost?</label>
+      <div class="content">
+        <p>The cost depends on factors like the length, complexity, and deadline of the work. Assignly ensures transparent and fair pricing—users are informed of the estimated cost before confirming the order, so there are no hidden surprises.</p>
+      </div>
+    </div>
+    
+    <div class="faq">
+      <input type="checkbox" id="faq7">
+      <label for="faq7"> How do deadlines work?</label>
+      <div class="content">
+        <p>Deadlines are a top priority at Assignly. Users specify the required date at the time of placing the order, and volunteers are responsible for completing the task within that timeframe. We value punctuality and ensure timely delivery, even for urgent requests.</p>
+      </div>
+    </div>
+    
+    <div class="faq">
+      <input type="checkbox" id="faq8">
+      <label for="faq8"> Why choose Assignly?</label>
+      <div class="content">
+        <p>Most platforms only provide digital documents, leaving you to copy everything by hand. Assignly saves you that time and effort by directly delivering handwritten copies. On top of that, it creates earning opportunities for volunteers, ensuring quality and trust for both sides.</p>
+      </div>
+    </div>
+    
+    <div class="faq">
+      <input type="checkbox" id="faq9">
+      <label for="faq9"> Can I volunteer writing assignments?</label>
+      <div class="content">
+        <p>Yes! If you have neat handwriting, discipline with deadlines, and a willingness to contribute, you can join Assignly as a volunteer. It’s a flexible way to earn while helping others complete their work on time.</p>
+      </div>
+    </div>
+    
+    <div class="faq">
+      <input type="checkbox" id="faq10">
+      <label for="faq10"> How can I contact Assignly?</label>
+      <div class="content">
+        <p>We keep communication simple. If you have any questions, need help placing an order, or any related query, just drop us an email. We’ll respond promptly.<br>
+📧 Email: <a href="mailto:assignly.helpline@gmail.com">assignly.helpline@gmail.com</a></p>
+      </div>
+    </div>
+
+  </div>
+  
+  
+  </div>
+  <footer class="footer">
+  	 <div class="container">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 			<h4>Assignly</h4>
+  	 			<ul>
+  	 				<li><a href="#about_us">about us</a></li>
+  	 				<li><a href="#service">our services</a></li>
+  	 				<li><a href="#privacy_policy">privacy policy</a></li>
+  	 				<li><a href="#contact_us">contact us</a></li>
+  	 				<li><a href="#faq">FAQ</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		  
+  	
+  	 		
+  	 		
+  	 		<div class="footer-col">
+  	 			<h4>Reach us at</h4>
+  	 			<div class="social-links">
+  	 				<a href="https://t.me/assignly"><i class="fab fa-telegram-plane"></i></a>
+  	 				<a href="https://www.instagram.com/assignly_?igsh=amZ0ZjFxcTV4cHI="><i class="fab fa-instagram"></i></a>
+  	 				<a href="mailto:assignly.helpline@gmail.com"><i class="fas fa-envelope"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+  	 </div>
+  	 <div class="copyright">
+   © 2025 <span class="brand">Assignly</span>. All rights reserved.
+</div>
+  </footer>
+    
+   <script src="script0.js"></script>
+   
+</body>
+</html>

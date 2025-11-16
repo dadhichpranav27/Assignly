@@ -1,0 +1,1439 @@
+
+
+/*THIS IS PRELOADER SECTION*/
+
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  width: 100%;
+  max-width: 100%;
+}
+
+
+
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --bg: #e3e4e8;
+  --fg: #2e3138;
+  --primary: #255ff4;
+  font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+}
+
+.hourglass,
+.hourglass:before,
+.hourglass:after {
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+.loader_wrapper {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;      /* default light background */
+  z-index: 99999;
+  opacity: 1;
+  transition: opacity 0.8s ease, visibility 0s linear 0.8s;
+  visibility: visible;
+}
+
+/* hide with fade-out */
+.loader_wrapper.fade-out {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+.loader_wrapper.dark-mode {
+  background: #17181c; /* same as body dark bg */
+}
+
+
+/* Hourglass animation */
+.hourglass,
+.hourglass:before,
+.hourglass:after {
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+/* Hourglass main */
+.hourglass {
+  width: 5em;
+  height: 9em;
+  position: relative;
+  z-index: 1;
+  clip-path: polygon(
+    0% 0%,100% 0%,100% 5.55%,95% 5.55%,95% 28%,60% 46%,60% 54%,95% 72%,95% 94.45%,100% 94.45%,100% 100%,0% 100%,0% 94.45%,5% 94.45%,5% 72%,40% 54%,40% 46%,5% 28%,5% 5.55%,0% 5.55%
+  );
+  background-image: linear-gradient(
+    #255ff4 0.5em,
+    #737a8c55 0.5em 8.5em,
+    #255ff4 8.5em
+  );
+  overflow: hidden;
+  will-change: transform;
+}
+
+/* Hourglass sand color changes with dark mode */
+.hourglass:before {
+  background-color: #808080; /* light mode sand */
+}
+
+body.dark-mode .hourglass:before {
+  background-color: #b0b0b0; /* dark mode sand */
+}
+
+
+
+
+
+
+
+
+.hourglass {
+  --polygonH: polygon(
+    0% 0%,
+    100% 0%,
+    100% 5.55%,
+    95% 5.55%,
+    95% 28%,
+    60% 46%,
+    60% 54%,
+    95% 72%,
+    95% 94.45%,
+    100% 94.45%,
+    100% 100%,
+    0% 100%,
+    0% 94.45%,
+    5% 94.45%,
+    5% 72%,
+    40% 54%,
+    40% 46%,
+    5% 28%,
+    5% 5.55%,
+    0% 5.55%
+  );
+  animation-name: flip;
+  animation-timing-function: ease-in-out;
+  background-image: linear-gradient(
+    var(--primary) 0.5em,
+    #737a8c55 0.5em 8.5em,
+    var(--primary) 8.5em
+  );
+  clip-path: var(--polygonH);
+  -webkit-clip-path: var(--polygonH);
+  overflow: hidden;
+  position: relative;
+  width: 5em;
+  height: 9em;
+  z-index: 0;
+}
+.hourglass:before,
+.hourglass:after {
+  animation-timing-function: linear;
+  content: "";
+  display: block;
+  position: absolute;
+}
+.hourglass:before {
+  --polygonB1: polygon(
+    0% 0%,
+    100% 0%,
+    100% 24%,
+    50% 47%,
+    50% 47%,
+    50% 47%,
+    50% 47%,
+    50% 47%,
+    50% 47%,
+    50% 47%,
+    50% 47%,
+    0% 24%
+  );
+  --polygonB2: polygon(
+    0% 4%,
+    100% 4%,
+    100% 24%,
+    55% 45%,
+    55% 100%,
+    55% 100%,
+    55% 100%,
+    45% 100%,
+    45% 100%,
+    45% 100%,
+    45% 45%,
+    0% 24%
+  );
+  --polygonB3: polygon(
+    0% 24%,
+    100% 24%,
+    100% 24%,
+    55% 45%,
+    55% 80%,
+    100% 100%,
+    100% 100%,
+    0% 100%,
+    0% 100%,
+    45% 80%,
+    45% 45%,
+    0% 24%
+  );
+  --polygonB4: polygon(
+    45% 45%,
+    55% 45%,
+    55% 45%,
+    55% 45%,
+    55% 58%,
+    100% 76%,
+    100% 100%,
+    0% 100%,
+    0% 76%,
+    45% 58%,
+    45% 45%,
+    45% 45%
+  );
+  --polygonB5: polygon(
+    50% 53%,
+    50% 53%,
+    50% 53%,
+    50% 53%,
+    50% 53%,
+    100% 76%,
+    100% 100%,
+    0% 100%,
+    0% 76%,
+    50% 53%,
+    50% 53%,
+    50% 53%
+  );
+  animation-name: fill;
+  background-color: #808080; /* light mode sand */
+  background-size: 100% 3.6em;
+  clip-path: var(--polygonB1);
+  -webkit-clip-path: var(--polygonB1);
+  top: 0.5em;
+  left: 0.5em;
+  width: 4em;
+  height: 8em;
+  z-index: 1;
+}
+.hourglass:after {
+  animation-name: glare;
+  background: linear-gradient(
+        90deg,
+        #0000 0.5em,
+        #0003 0.5em 1.5em,
+        #0000 1.5em 3.5em,
+        #fff3 3.5em 4.5em,
+        #fff0 4.5em 6.5em,
+        #0003 6.5em 7.5em,
+        #0000 7.5em
+      )
+      0 0 / 100% 0.5em,
+    linear-gradient(
+        90deg,
+        #0000 0.75em,
+        #0003 0.75em 1.25em,
+        #0000 1.25em 3.75em,
+        #fff3 3.75em 4.25em,
+        #fff0 4.25em 6.75em,
+        #0003 6.75em 7.25em,
+        #0000 7.25em
+      )
+      0 0.5em / 100% 8em,
+    linear-gradient(
+        90deg,
+        #0000 0.5em,
+        #0003 0.5em 1.5em,
+        #0000 1.5em 3.5em,
+        #fff3 3.5em 4.5em,
+        #fff0 4.5em 6.5em,
+        #0003 6.5em 7.5em,
+        #0000 7.5em
+      )
+      0 100% / 100% 0.5em;
+  background-repeat: repeat-x;
+  top: 0;
+  left: -3em;
+  width: 200%;
+  height: 100%;
+  z-index: 2;
+}
+/* Animations */
+@keyframes fill {
+  from {
+    clip-path: var(--polygonB1);
+    -webkit-clip-path: var(--polygonB1);
+  }
+  10% {
+    clip-path: var(--polygonB2);
+    -webkit-clip-path: var(--polygonB2);
+  }
+  45% {
+    clip-path: var(--polygonB3);
+    -webkit-clip-path: var(--polygonB3);
+  }
+  80% {
+    clip-path: var(--polygonB4);
+    -webkit-clip-path: var(--polygonB4);
+  }
+  85%,
+  to {
+    clip-path: var(--polygonB5);
+    -webkit-clip-path: var(--polygonB5);
+  }
+}
+@keyframes glare {
+  from,
+  90% {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(3em);
+  }
+}
+@keyframes flip {
+  from,
+  90% {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17181c;
+    --fg: #c7cad1;
+  }
+  .hourglass:before {
+    background-color: #b0b0b0; /* lighter gray sand in dark mode */
+  }
+}
+
+
+
+
+
+/*THIS IS NAVBAR SECTION*/
+
+
+
+
+
+*{
+   margin:0;
+   padding:0;
+}
+body{
+   min-height:100vh;
+   font-family: 'Poppins', 'Roboto', 'Bitter', sans-serif;
+  
+}
+
+nav{
+   background-color:#158cff;
+  /* background-color: #ff9340;*/
+   box-shadow:3px 5px 5px #505050b5;
+}
+nav ul{
+   width:100%;
+   list-style:none;
+   display:flex;
+   justify-content:flex-end;
+   align-items:center;
+}
+nav li{
+   height:60px;
+}
+nav a{
+   height:100%;
+   padding:0px 20px;
+   display:flex;
+   align-items:center;
+   text-decoration:none;
+   color:white;
+}
+nav a:hover{
+   color:grey;
+}
+.dark_mode{
+   border-radius:50%;
+}
+
+
+
+/* This is dark mode switch INSIDE NAV BAR */
+
+
+input[type=checkbox] {
+	--off: #c7cad1;
+	--mid: #829ad6;
+	--on: #255ff4;
+	--transDur: 0.5s;
+	--timing: cubic-bezier(0.6,0,0.4,1);
+	animation: bgOff var(--transDur) var(--timing);
+	background-color: var(--off);
+	border-radius: 0.67em / 0.5em;
+	box-shadow:
+		0 0.05em 0.1em #00000007 inset,
+		0 -0.25em 0.25em #0001 inset,
+		0 -0.5em 0 #0001 inset,
+		0 0.1em 0.1em #0001;
+	cursor: pointer;
+	position: relative;
+	width: 2.25em;
+	height: 1.5em;
+	-webkit-appearance: none;
+	appearance: none;
+	-webkit-tap-highlight-color: transparent;
+}
+input[type=checkbox]:before {
+	animation: handleOff var(--transDur) var(--timing);
+	background-attachment: fixed;
+	background-position: 50% calc(50% - 0.1875em);
+	border-radius: 0.5em / 0.375em;
+	box-shadow:
+		0 0.175em 0.175em 0 #0001 inset,
+		0 0.375em 0 #0002 inset,
+		0 0.375em 0 var(--off) inset,
+		0 0.475em 0.1em #0001 inset;
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0.125em;
+	left: 0.125em;
+	width: 1em;
+	height: 0.75em;
+}
+input[type=checkbox]:checked {
+	animation: bgOn var(--transDur) var(--timing) forwards;
+}
+input[type=checkbox]:checked:before {
+	animation: handleOn var(--transDur) var(--timing) forwards;
+}
+input[type=checkbox]:focus {
+	outline: none;
+}
+input[type=checkbox].pristine, input[type=checkbox].pristine:before {
+	animation: none;
+}
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+	body, input[type=checkbox]:before {
+		background-image:
+			linear-gradient(90deg,#3a3d46 2px,#3a3d4600 2px),
+			linear-gradient(#3a3d46 2px,#2e3138 2px);
+	}
+	input[type=checkbox] {
+		--off: #5c6270;
+		--mid: #3d5fb6;
+	}
+}
+/* Animations */
+@keyframes bgOff {
+	from {
+		background-color: var(--on);
+	}
+	50% {
+		background-color: var(--mid);
+	}
+	to {
+		background-color: var(--off);
+	}
+}
+@keyframes bgOn {
+	from {
+		background-color: var(--off);
+	}
+	50% {
+		background-color: var(--mid);
+	}
+	to {
+		background-color: var(--on);
+	}
+}
+@keyframes handleOff {
+	from {
+		box-shadow:
+			0 0.175em 0.175em 0 #0001 inset,
+			0 0.375em 0 #0002 inset,
+			0 0.375em 0 var(--on) inset,
+			0 0.475em 0.1em #0001 inset;
+		left: 1.125em;
+		width: 1em;
+	}
+	50% {
+		box-shadow:
+			0 0.175em 0.175em 0 #0001 inset,
+			0 0.375em 0 #0002 inset,
+			0 0.375em 0 var(--mid) inset,
+			0 0.475em 0.1em #0001 inset;
+		left: 0.125em;
+		width: 2em;
+	}
+	to {
+		box-shadow:
+			0 0.175em 0.175em 0 #0001 inset,
+			0 0.375em 0 #0002 inset,
+			0 0.375em 0 var(--off) inset,
+			0 0.475em 0.1em #0001 inset;
+		left: 0.125em;
+		width: 1em;
+	}
+}
+@keyframes handleOn {
+	from {
+		box-shadow:
+			0 0.175em 0.175em 0 #0001 inset,
+			0 0.375em 0 #0002 inset,
+			0 0.375em 0 var(--off) inset,
+			0 0.475em 0.1em #0001 inset;
+		left: 0.125em;
+		width: 1em;
+	}
+	50% {
+		box-shadow:
+			0 0.175em 0.175em 0 #0001 inset,
+			0 0.375em 0 #0002 inset,
+			0 0.375em 0 var(--mid) inset,
+			0 0.475em 0.1em #0001 inset;
+		left: 0.125em;
+		width: 2em;
+	}
+	to {
+		box-shadow:
+			0 0.175em 0.175em 0 #0001 inset,
+			0 0.375em 0 #0002 inset,
+			0 0.375em 0 var(--on) inset,
+			0 0.475em 0.1em #0001 inset;
+		left: 1.125em;
+		width: 1em;
+	}
+}
+
+/* Minor editting */
+
+.darkM {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  padding: 0 10px;
+}
+
+
+input[type=checkbox] {
+  transform: scale(1.4);
+  cursor: pointer;
+}
+
+
+
+/* DARKMODE BUTTON ENDS HERE */
+
+
+
+/* BG FOR MODE SWITCH */
+body.dark-mode {
+  background: black;
+  color: #bfeaff;
+}
+
+body.dark-mode nav a {
+  color: white;
+}
+
+body.dark-mode nav a:hover {
+  color: grey;
+}
+
+
+
+.proj_name{
+   margin-right:auto;
+  font-family: "Rye", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size:40px;
+  
+ 
+}
+.proj_name,
+.proj_name:hover,
+.proj_name:active,
+.proj_name:focus {
+  color: inherit !important;
+  text-decoration: none !important;
+  pointer-events: none;
+}
+
+.sidenav {
+   position: fixed;
+   top: 0;
+   left: -100%;          
+   height: 100%;
+   width: 100%;
+   z-index: 999;
+   background-color: #ffffff84;
+   backdrop-filter: blur(3px);
+   color: black;
+   box-shadow: -10px -10px 10px 15px #505050b5;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: flex-start;
+   pointer-events: none;      
+   opacity: 0;
+   display: flex;
+    transition: left 0.4s ease, opacity 0.4s ease;         
+}
+
+.sidenav.active {
+   left: 0;                   
+   pointer-events: auto;     
+   opacity:1;
+   /* display: flex;  */
+}
+
+.sidenav li{
+   width:100%;
+   /*padding:50px 0 50px 75px;*/
+}
+.sidenav a{
+   color:black;
+}
+.sidenav a:hover{
+   background-color:#00000052;
+}
+
+.sidenav li.close-btn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;   /* push to right */
+  padding: 15px 20px;
+}
+
+.sidenav li.close-btn svg {
+  width: 28px;      /* bigger icon */
+  height: 28px;
+  cursor: pointer;
+  fill: black;      /* make sure it's visible */
+  transition: transform 0.2s ease, fill 0.2s ease;
+}
+
+.sidenav li.close-btn svg:hover {
+  transform: rotate(90deg) scale(1.2);
+  fill: red;        /* nice hover effect */
+}
+
+.sidenav li {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* When sidenav opens */
+.sidenav.active li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Delay each link slightly for stagger effect */
+.sidenav.active li:nth-child(1) { transition-delay: 0.1s; }
+.sidenav.active li:nth-child(2) { transition-delay: 0.3s; }
+.sidenav.active li:nth-child(3) { transition-delay: 0.5s; }
+.sidenav.active li:nth-child(4) { transition-delay: 0.7s; }
+.sidenav.active li:nth-child(5) { transition-delay: 0.9s; }
+.sidenav.active li:nth-child(6) { transition-delay: 1.1s; }
+
+
+.menu_btn{
+   display: none;
+}
+@media(max-width : 800px){
+   .hideOnMobile{
+      display: none;
+   }
+   .menu_btn{
+      display: block;
+   }
+}
+@media(max-width: 350px){
+   .sidenav{
+      width: 100%;
+   }
+}
+
+
+
+/* NAVIGATION BAR ENDS HERE  */
+
+
+
+/* LOGO ANIMATION STARTS */
+
+.logo_ani{
+  position: relative;
+  width:65vw;
+  height:35vh;
+  margin:0 auto;
+  overflow: hidden;
+
+}
+
+.logo_ani img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  opacity: 0;
+}
+
+/* Start logo animation only when .start-logo is present */
+.logo_ani img { opacity: 0; } /* keep them hidden by default */
+
+.logo_ani.start-logo img[alt="Image1"] {
+  animation: fadeInStay 0.5s linear 0s forwards;
+}
+.logo_ani.start-logo img[alt="Image2"] {
+  animation: fadeInStay 0.5s linear 0.5s forwards;
+}
+.logo_ani.start-logo img[alt="Image3"] {
+  animation: fadeInStay 0.4s linear 1s forwards;
+}
+.logo_ani.start-logo img[alt="Image4"] {
+  animation: fadeInStay 0.4s linear 1.4s forwards;
+}
+
+@keyframes fadeInStay {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+
+@media (min-width: 1024px) {
+  .logo_ani {
+    width: 18vw;
+    height: 13vh;
+    margin: 0 auto; /* added top margin */
+  }
+}
+
+
+/* LOGO ANIMATION ENDS HERE */
+
+
+
+/* THEORY STARTS */
+
+.question{
+   font-size:1em;
+   color:#158cff;
+   margin-left:11px;
+   
+}
+p{
+   font-size:0.75em;
+   margin-left:11px;
+   padding-bottom:3em;
+}
+
+/* THEORY ENDS HERE */
+
+
+
+/* VOLUNTEER / USER CHOICE STARTS */
+
+
+.choice{
+  padding:50px;
+}
+.choice_theory {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #158cff, #0f4cf5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 0rem;
+}
+
+#or_divider {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: #555;
+    font-size: 1.1rem;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+#or_divider::before,
+#or_divider::after {
+    content: "";
+    flex: 1;
+    height: 1.5px;
+    width:100%;
+    background: #ccc;
+    margin: 0 1rem;
+}
+
+.volun_flip {
+      width: 85%;
+      height: 7em;
+     margin: auto; 
+      perspective: 1000px;
+      cursor: pointer;
+      
+    }
+
+.volun_flip_inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d; 
+      transition: transform 0.6s;
+    }
+
+.volun_flip:hover .volun_flip_inner {
+      transform: rotatex(180deg);
+    }
+
+.volun_front,
+.volun_back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.5rem;
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+.volun_front {
+      background: grey;
+      border: 1px solid #e5e7eb;
+      color: #111;
+    }
+
+.volun_back {
+      background: linear-gradient(135deg, #158cff, #0f4cf5);
+      
+      transform: rotatex(180deg);
+      display:block;
+      font-size:0.8em;
+      
+      color: #ffffff;
+   display: flex;                
+   flex-direction: column;       
+   gap: 0.6rem;                
+   align-items: center;         
+   justify-content: center;    
+   font-weight: 400;           
+   font-size: 0.95rem;        
+   line-height: 1.3;      
+      
+    }
+
+
+.volun_desc {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  max-width: 90%;
+}
+
+.volun_btn {
+  padding: 0.45rem 0.9rem;
+  border-radius: 0.45rem;
+  border: none;
+  background: #ffffff;
+  color: #0f4cf5;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(15,76,245,0.14);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  align-self: center;
+  text-decoration: none;  
+}
+
+.volun_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(15,76,245,0.18);
+}
+
+
+
+.user_flip {
+      width: 85%;
+      height: 7em;
+      margin:  auto;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+.user_flip_inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+.user_flip:hover .user_flip_inner {
+      transform: rotatex(180deg);
+    }
+
+.user_front,
+.user_back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.5rem;
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+.user_front {
+      background: grey;
+      border: 1px solid #e5e7eb;
+      color: #111;
+    }
+
+.user_back {
+      background: linear-gradient(135deg, #158cff, #0f4cf5);
+      transform: rotatex(180deg);
+      color: #ffffff;             
+display: flex;             
+flex-direction: column;     
+gap: 0.6rem;               
+align-items: center;        
+justify-content: center;   
+font-weight: 400;           
+font-size: 0.95rem;        
+line-height: 1.3;             
+    }
+    
+
+.user_desc {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  max-width: 90%;
+}
+
+.user_btn {
+  padding: 0.45rem 0.9rem;
+  border-radius: 0.45rem;
+  border: none;
+  background: #ffffff;
+  color: #0f4cf5;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(15,76,245,0.14);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  align-self: center;
+  text-decoration: none;  
+}
+
+.user_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(15,76,245,0.18);
+}
+
+
+
+.volun_flip,
+.user_flip {
+    width: 70%;      /* desktop width */
+    max-width: 900px; /* optional limit */
+    margin: auto;
+}
+@media (max-width: 800px) {
+    .volun_flip,
+    .user_flip {
+        width: 95%;    /* wider on mobile */
+        max-width: none;
+    }
+}
+#or_divider {
+    width: 70%;   /* default desktop */
+    margin: auto;
+}
+
+@media (max-width: 800px) {
+    #or_divider {
+        width: 95%;  /* mobile matches cards */
+    }
+}
+
+
+
+
+
+
+/* VOLUNTEER / USER CHOICE ENDS */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FOOTER STARTS HERE */
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body{
+	line-height: 1.5;
+	font-family: 'Poppins', sans-serif;
+}
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+.container{
+	max-width: 1170px;
+	margin:auto;
+	
+	
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #24262b;
+    padding: 35px 0 10px;
+    position: sticky;
+    bottom: 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #158cff;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+
+.copyright {
+   text-align: center;
+   margin-top: 20px;
+   font-size: 14px;
+   color: #bbbbbb;
+}
+.copyright .brand {
+   color: #158cff; /* navbar blue */
+   font-weight: 600;
+}
+
+
+
+/* Dark mode footer styles */
+body.dark-mode .footer {
+   background-color: grey;   /* light background */
+   color: white;                 /* dark text */
+}
+
+body.dark-mode .footer-col h4 {
+   color: white;
+}
+
+body.dark-mode .footer-col ul li a {
+   color: white;
+}
+
+body.dark-mode .footer-col ul li a:hover {
+   color: #408cff;  /* same blue as navbar accent */
+   padding-left: 8px; /* keep hover shift */
+}
+
+body.dark-mode .footer-col .social-links a {
+   background-color: rgba(0,0,0,0.1);
+   color: #333;
+}
+
+body.dark-mode .footer-col .social-links a:hover {
+   background-color: #158cff;
+   color: #fff;
+}
+
+body.dark-mode .copyright {
+   color: #444;
+}
+
+body.dark-mode .copyright .brand {
+   color: #158cff; /* keep Assignly brand blue */
+}
+
+
+/* REVEAL ON SCROLL EFFECT ON FOOTER */
+.container_body{
+   position: relative;
+   z-index:200;
+   background-color: white;
+   margin-top:4em;
+}
+.container_body.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+/* FOOTER ENDS HERE */
+
+
+/* DOWNLOAD BUTTON FOR PRIVACY POLICY */
+
+.btn {
+  /* margin: 0.5rem; */
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+
+  display: inline-flex;        /* keeps text + icon aligned */
+  align-items: center;
+  gap: 0.15rem;                /* space between text and icon */
+  text-decoration: none;       /* remove underline on <a> */
+}
+
+.btn-primary {
+  background: linear-gradient(#158cff, #0f4cf5);
+  color: white;
+  box-shadow: inset 0pt 4pt 3pt -2pt #386fff, 0pt 4pt 5pt -3pt #0009;
+  border-bottom: 2pt solid #083acd;
+  transition: all 0.5s ease;
+}
+
+.btn-primary:hover {
+  border-bottom: 4pt solid #083acd;
+  translate: 0pt -1pt;
+}
+
+.btn-primary:active {
+  box-shadow: inset 0pt 4pt 3pt -2pt #386fff, 0pt 4pt 5pt -3pt #0000;
+  border-bottom: 1pt solid #083acd;
+  translate: 0pt 0pt;
+}
+
+.btn-primary kbd {
+  background-color: #158cff;
+  box-shadow: inset 0pt -3pt 3pt -2pt #1f54f0,
+              inset 0pt 3pt 3pt -2pt #658dff,
+              0pt 2pt 2pt -2pt #0005,
+              0pt 0pt 0pt 2pt #0d47f0;
+}
+
+.btn-base {
+  background: #158cff;
+}
+
+.material-symbols-outlined {
+  font-size: 0.8rem;
+  line-height: 1;
+  transition: transform 0.3s ease;  /* smooth hover animation */
+}
+
+.btn-primary:hover .material-symbols-outlined {
+  transform: translateX(3px);       /* slide right on hover */
+}
+
+
+/* DOWNLOAD BUTTON FOR PRIVACY POLICY ENDS HERE */
+
+
+
+/* FAQ SECTION */
+
+ .faq-container {
+      max-width: 100%;
+      margin: 2rem auto;
+      padding: 1rem;
+      /* font-family: Arial, sans-serif; */
+      
+    }
+
+    .faq {
+      border-bottom: 1px solid #ddd;
+    }
+
+    .faq input {
+      display: none;
+    }
+
+    .faq label {
+      display: block;
+      font-weight:300;
+      padding: 0.5rem;
+      cursor: pointer;
+      position: relative;
+      transition: background 0.9s;
+      
+    }
+
+    .faq label:hover {
+      background: #158cffd0;
+    }
+
+    .faq label::after {
+      content: '+';
+      position: absolute;
+      right: 1rem;
+      font-size: 1.2rem;
+      transition: transform 0.9s;
+    }
+
+    .faq input:checked + label::after {
+      content: '−';
+    }
+
+    .faq .content {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 1rem;
+      color: #333;
+      transition: max-height 0.4s ease;
+      background-color:#158cff22;
+    }
+
+    .faq input:checked ~ .content {
+      max-height: 500px; /* enough to show answer */
+      padding: 0.4rem;
+    }
+    
+/* ============================= */
+/* FAQ COLOR FIX FOR DARK MODE */
+/* ============================= */
+.faq label,
+.faq .content p {
+  color: #000000; /* default light mode text color */
+}
+
+body.dark-mode .faq label,
+body.dark-mode .faq .content p {
+  color: #ffffff; /* white text for dark mode */
+}
+
+/* If background is also white or light in light mode */
+.faq {
+  background-color: #ffffff; /* light mode background */
+  border: 1px solid #ccc;
+}
+
+/* For dark mode background */
+body.dark-mode .faq {
+  background-color: #111111; /* dark background for FAQ boxes */
+  border: 1px solid #444;
+}
+body.dark-mode .faq label:hover {
+  color: #90caf9; /* soft blue on hover in dark mode */
+}
+
+/* ============================= */
+/* FAQ TEXT SIZE FIX FOR DESKTOP */
+/* ============================= */
+@media (min-width: 1024px) {
+  .faq label {
+    font-size: 0.95em;      /* slightly smaller question text */
+    padding: 0.4rem 0.6rem; /* tighter spacing */
+  }
+
+  .faq .content p {
+    font-size: 0.85em;      /* smaller answer text */
+    line-height: 1.6;       /* keep airy for readability */
+  }
+
+  .faq label::after {
+    font-size: 1rem;        /* make + / − icon proportionate */
+    right: 0.8rem;
+  }
+}
+
+
+
+
+
+/* FAQ SECTION ENDS HERE */
+
+
+
+
+/* TO MAKE NAV BAR STICKY */
+nav {
+  position:fixed;
+  top: 0;
+  left:0;
+  width:100%;
+  z-index: 1000;
+  transition: box-shadow 0.3s ease;
+}
+
+nav.scrolled {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/*TO MAKE CONTENT VISIBLE AFTER THE NAV BAR */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px; 
+}
+
+
+
+.start-logo {
+  animation: logoFadeScale 1.25s ease-out forwards;
+}
+
+@keyframes logoFadeScale {
+  0% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+  34% {
+    opacity: 1;
+    transform: scale(0.7);
+  }
+  68%{
+     opacity:1;
+     transform:scale(1.1);
+  }
+  100%{
+     opacity:1;
+     transform:scale(1);
+  }
+}
+
+
+
+.logo_ani {
+  transition: filter 0.3s ease;
+}
+
+/* Light mode — normal */
+body:not(.dark-mode) .logo_ani{
+  filter: none;
+}
+
+/* Dark mode — invert or brighten it */
+body.dark-mode .logo_ani{
+  filter:  brightness(1.7);
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1024px) {
+  body, p, h1, h2, h3, h4, h5, h6 {
+    font-size: 0.9em; /* Slightly reduce the font size */
+  }
+}
+
+/* ============================= */
+/* FOOTER TEXT SIZE BOOST FOR DESKTOP */
+/* ============================= */
+@media (min-width: 1024px) {
+  footer,
+  footer p,
+  footer a,
+  .footer-text {
+    font-size: 1.05em; /* small but clear increase */
+  }
+}
