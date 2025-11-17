@@ -734,7 +734,7 @@ document.getElementById("custom_whatsappBtn").addEventListener("click", function
     );
 
     
-    const whatsappNumber = "9831786341"; 
+    const whatsappNumber = "+918100375230"; 
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
     window.open(whatsappURL, "_blank");
