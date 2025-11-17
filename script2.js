@@ -218,7 +218,7 @@ const whatsappBtn = document.querySelector(".whatsapp_btn");
 
 const TELEGRAM_TOKEN = "8357811622:AAHV369vBc2bHiE1TQzrbinlG9U7qsnIcGE";
 const TELEGRAM_CHAT_ID = "1816788487";
-const WHATSAPP_NUMBER = "+919831786341";
+const WHATSAPP_NUMBER = "+918100375230";
 
 // -------------------- Collect Form Data --------------------
 function collectFormData() {
@@ -430,14 +430,14 @@ const resdeliveryFee = 50;
 
 // NEW urgency rates (per page) for Research & Write
 const resUrgencyRates = {
-  "1": 22,
-  "2-3": 18,
-  "4-7": 13,
-  "8-14": 12,
-  "15-30": 8
+  "1": 24,
+  "2-3": 20,
+  "4-7": 14,
+  "8-14": 13,
+  "15-30": 10
 };
 
-// SAME page adjustment logic as See & Write
+
 function resAdjustRate(baseRate, pages) {
   if (pages >= 1 && pages <= 5) {
     return baseRate * 1.10;
@@ -567,7 +567,7 @@ const resTelegramBtn = document.querySelector(".res_telegram_btn");
 const resWhatsappBtn = document.querySelector(".res_whatsapp_btn");
 const RES_TELEGRAM_TOKEN = "8357811622:AAHV369vBc2bHiE1TQzrbinlG9U7qsnIcGE";
 const RES_TELEGRAM_CHAT_ID = "1816788487";
-const RES_WHATSAPP_NUMBER = "+919831786341";
+const RES_WHATSAPP_NUMBER = "+918100375230";
 
 function collectResFormData() {
   const data = {};
