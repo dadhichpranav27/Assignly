@@ -226,6 +226,7 @@ document.querySelectorAll('.volunteer_btn').forEach(btn => {
       const phone = readInputValue("contactNo") || "N/A";
       const address = readInputValue("address") || "N/A";
       const paymentLink = readInputValue("payment_link") || "N/A";
+      const wpno = readInputValue("vol_whatsapp") || "N/A";
 
       const randomParagraphs = [
         "Volunteering helps us connect with others and build stronger communities. Even a small act of kindness can bring a big change. Every effort counts, and together we can make a real difference.",
@@ -250,6 +251,7 @@ const msgLines = [
   `*Name:* ${escapeMarkdownV2(name)}`,
   `*Email:* ${escapeMarkdownV2(email)}`,
   `*Phone:* ${escapeMarkdownV2(phone)}`,
+  `*Whatsapp No:* ${escapeMarkdownV2(wpno)}`,
   `*Address:* ${escapeMarkdownV2(address)}`,
   `*Payment Link / UPI:* ${escapeMarkdownV2(paymentLink)}`,
   "",
@@ -371,7 +373,7 @@ const msgLines = [
                 uniqueIdDisplay.classList.add("show");
               }
               if (infoMessage) {
-                infoMessage.innerHTML = `Keep this volunteer ID safe!<br>Check out your Telegram for further details.`;
+                infoMessage.innerHTML = `Keep this volunteer ID safe!<br>Check out your Whatsapp for further details.`;
                 infoMessage.classList.add("show");
               }
 
@@ -415,7 +417,7 @@ const msgLines = [
           uniqueIdDisplay.classList.add("show");
         }
         if (infoMessage) {
-          infoMessage.innerHTML = `Keep this volunteer ID safe!<br>Check out your Telegram for further details.`;
+          infoMessage.innerHTML = `Keep this volunteer ID safe!<br>Check out your Whatsapp for further details.`;
           infoMessage.classList.add("show");
         }
         sendTelegramAll(uniqueId);
