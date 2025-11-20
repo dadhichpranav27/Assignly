@@ -728,20 +728,6 @@ body.dark-mode nav a:hover {
 }
 
 
-@media (min-width: 1024px) {
-  .logo_ani {
-    width: 220px;      /* fixed logo area */
-    height: 180px;     /* fixed height so animation looks same */
-    margin-top: 40px;  /* pushes content down so nothing overlaps */
-  }
-
-  .logo_ani img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-  }
-}
-
 
 
 
