@@ -683,7 +683,7 @@ body.dark-mode nav a:hover {
   position: relative;
   width:65vw;
   height:35vh;
-  margin:0 auto;
+  margin:60px auto;
   overflow: hidden;
 
 }
