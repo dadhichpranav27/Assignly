@@ -1441,38 +1441,3 @@ body.dark-mode .logo_ani{
   }
 }
 
-
-
-
-/* ===== LOGO RESPONSIVE SPACING FIX ===== */
-
-/* Make the space below the logo scale with screen size */
-.logo-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: min(22vw, 170px); /* responsive gap, capped for large screens */
-}
-
-/* Make sure logo animation never gets overlapped by page content */
-main, 
-.content, 
-.form-section, 
-.page-wrapper, 
-.container, 
-.wrapper {
-  margin-top: 0 !important;
-  padding-top: min(22vw, 170px) !important;
-}
-
-/* Prevent the logo animation from stretching strangely */
-.logo_ani {
-  max-width: 300px;       /* can adjust */
-  width: 40vw;            /* responsive width */
-  max-height: 300px;
-}
-
-.logo_ani img {
-  width: 100%;
-  height: auto;
-}
