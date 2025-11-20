@@ -728,6 +728,23 @@ body.dark-mode nav a:hover {
 }
 
 
+@media (min-width: 1024px) {
+  .logo_ani {
+    width: 220px;      /* fixed logo area */
+    height: 180px;     /* fixed height so animation looks same */
+    margin-top: 40px;  /* pushes content down so nothing overlaps */
+  }
+
+  .logo_ani img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+}
+
+
+
+
 /* LOGO ANIMATION ENDS HERE */
 
 
@@ -1436,4 +1453,40 @@ body.dark-mode .logo_ani{
   .footer-text {
     font-size: 1.05em; /* small but clear increase */
   }
+}
+
+
+
+
+/* ===== LOGO RESPONSIVE SPACING FIX ===== */
+
+/* Make the space below the logo scale with screen size */
+.logo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: min(22vw, 170px); /* responsive gap, capped for large screens */
+}
+
+/* Make sure logo animation never gets overlapped by page content */
+main, 
+.content, 
+.form-section, 
+.page-wrapper, 
+.container, 
+.wrapper {
+  margin-top: 0 !important;
+  padding-top: min(22vw, 170px) !important;
+}
+
+/* Prevent the logo animation from stretching strangely */
+.logo_ani {
+  max-width: 300px;       /* can adjust */
+  width: 40vw;            /* responsive width */
+  max-height: 300px;
+}
+
+.logo_ani img {
+  width: 100%;
+  height: auto;
 }
