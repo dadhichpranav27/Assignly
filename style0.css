@@ -683,6 +683,8 @@ body.dark-mode nav a:hover {
   position: relative;
   width:65vw;
   height:35vh;
+  max-width: 350px;    
+  max-height: 200px;   
   margin:0 auto;
   overflow: hidden;
 
@@ -723,6 +725,8 @@ body.dark-mode nav a:hover {
   .logo_ani {
     width: 18vw;
     height: 13vh;
+    max-width: 350px; 
+    max-height: 200px; 
     margin: 0 auto; /* added top margin */
   }
 }
