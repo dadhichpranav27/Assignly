@@ -280,6 +280,16 @@ Simply upload your file, select your preferences, and we’ll ensure your handwr
   </div>
   <div class="qr_amount" id="qr_amount"></div>
 
+<!-- OR Divider -->
+<div class="or-divider">OR</div>
+
+<button id="see_pay_direct_btn"
+        class="pay_direct_btn"
+        onclick="return handleSeeDirectPayClick();">
+  Pay Directly
+</button>
+
+
    <!-- Receipt Upload Section -->
   <div class="receipt_upload_section">
     <label for="receipt_uplo" class="receipt_label">Upload Receipt</label>
@@ -426,6 +436,19 @@ Simply upload your file, select your preferences, and we’ll ensure your handwr
     <p class="qr_tip">Scan this QR code to make your payment securely.</p>
   </div>
   <div class="qr_amount" id="res_qr_amount"></div>
+
+
+<!-- OR Divider -->
+<div class="or-divider">OR</div>
+
+<!-- Pay Directly Button -->
+<a id="pay_direct_btn"
+   href="#"
+   class="pay-direct-btn"
+   onclick="return handleDirectPayClick()">
+   Pay Directly
+</a>
+
 
    <!-- Receipt Upload Section -->
   <div class="receipt_upload_section">
