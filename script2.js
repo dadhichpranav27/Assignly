@@ -740,3 +740,204 @@ document.getElementById("custom_whatsappBtn").addEventListener("click", function
     window.open(whatsappURL, "_blank");
   }, 1000);
 });
+
+
+
+
+
+
+
+function updatePayDirectButton() {
+  const btn = document.getElementById("pay_direct_btn");
+  const text = resQrAmount.textContent;   // FIXED: resQrAmount exists
+
+  // Extract numeric value from the displayed payment line
+  const match = text.match(/₹(\d+)/);
+
+  if (!match) {
+    btn.textContent = "Pay Directly";
+    btn.dataset.amount = "";
+    return;
+  }
+
+  const amount = match[1];
+  btn.textContent = `Pay ₹${amount} Directly`;
+  btn.dataset.amount = amount;
+}
+
+// Attach update function inside Research & Write calculation
+const originalResCalculateTotal = resCalculateTotal;
+resCalculateTotal = function () {
+  originalResCalculateTotal();  // run normal calculation
+  updatePayDirectButton();      // update button after calculation
+};
+
+function handleDirectPayClick() {
+  const amount = document.getElementById("pay_direct_btn").dataset.amount;
+
+  if (!amount) {
+    alert("Please select urgency, pages, and payment method first.");
+    return false;
+  }
+
+  const upiID = "9831136342@kotak811";
+  const name = "Assignly";
+
+  const upiLink = `upi://pay?pa=${upiID}&pn=${name}&am=${amount}&cu=INR`;
+
+  window.location.href = upiLink;
+  return false;
+}
+
+// -----------------------------
+// Fix: reliable Pay-Direct updater
+// Paste this at the END of your JS file
+// -----------------------------
+(function () {
+  // helpers
+  function getBtn() { return document.getElementById("pay_direct_btn"); }
+  function getQrNode() { return document.getElementById("res_qr_amount"); }
+
+  // improved update function (safe + toggles disabled state)
+  function safeUpdatePayDirectButton() {
+    const btn = getBtn();
+    const qrNode = getQrNode();
+    if (!btn || !qrNode) return;
+
+    const text = qrNode.textContent || "";
+    const match = text.match(/₹\s*([0-9]+)/);
+
+    if (!match) {
+      btn.textContent = "Pay Directly";
+      btn.dataset.amount = "";
+      btn.classList.add("disabled");
+      btn.setAttribute("aria-disabled", "true");
+      btn.style.pointerEvents = "none";
+      btn.style.opacity = "0.6";
+      return;
+    }
+
+    const amount = match[1];
+    btn.textContent = `Pay ₹${amount} Directly`;
+    btn.dataset.amount = amount;
+    btn.classList.remove("disabled");
+    btn.removeAttribute("aria-disabled");
+    btn.style.pointerEvents = "";
+    btn.style.opacity = "";
+  }
+
+  // 1) Watch the QR amount DOM node for changes (best reliability)
+  const qrNode = getQrNode();
+  if (qrNode) {
+    const observer = new MutationObserver(() => {
+      // small delay to ensure inner text is stable
+      setTimeout(safeUpdatePayDirectButton, 8);
+    });
+    observer.observe(qrNode, { childList: true, characterData: true, subtree: true });
+  }
+
+  // 2) Also attach listeners to form inputs to trigger an update after calculation runs
+  const urgency = document.getElementById("res_urgency");
+  const pages = document.getElementById("res_pages");
+  const radios = document.querySelectorAll('input[name="res_payment"]');
+
+  function attachTrigger(el) {
+    if (!el) return;
+    el.addEventListener("change", () => setTimeout(safeUpdatePayDirectButton, 12));
+    el.addEventListener("input", () => setTimeout(safeUpdatePayDirectButton, 12));
+  }
+
+  attachTrigger(urgency);
+  attachTrigger(pages);
+  radios.forEach(r => r.addEventListener("change", () => setTimeout(safeUpdatePayDirectButton, 12)));
+
+  // 3) Call it once on page load to set initial state
+  document.addEventListener("DOMContentLoaded", safeUpdatePayDirectButton);
+  // also call now in case script loads after DOM is ready
+  setTimeout(safeUpdatePayDirectButton, 30);
+
+})();
+
+/* ----------------------------------------------------
+   SEE & WRITE  →  PAY DIRECTLY  (Standalone Version)
+-----------------------------------------------------*/
+
+(function () {
+
+  // Helpers
+  function getSeeBtn() { return document.getElementById("see_pay_direct_btn"); }
+  function getSeeQrNode() { return document.getElementById("qr_amount"); }
+
+  // Update "Pay ₹X Directly" Button
+  function updateSeePayDirectButton() {
+    const btn = getSeeBtn();
+    const qrNode = getSeeQrNode();
+    if (!btn || !qrNode) return;
+
+    const text = qrNode.textContent || "";
+    const match = text.match(/₹\s*([0-9]+)/);
+
+    if (!match) {
+      btn.textContent = "Pay Directly";
+      btn.dataset.amount = "";
+      btn.style.opacity = "0.6";
+      btn.style.pointerEvents = "none";
+      return;
+    }
+
+    const amount = match[1];
+    btn.textContent = `Pay ₹${amount} Directly`;
+    btn.dataset.amount = amount;
+
+    btn.style.opacity = "1";
+    btn.style.pointerEvents = "auto";
+  }
+
+  // Watch for QR amount changes
+  const seeQrNode = getSeeQrNode();
+  if (seeQrNode) {
+    const observer = new MutationObserver(() => {
+      setTimeout(updateSeePayDirectButton, 10);
+    });
+    observer.observe(seeQrNode, { childList: true, characterData: true, subtree: true });
+  }
+
+  // Trigger updates when inputs change
+  function trigger(el) {
+    if (!el) return;
+    el.addEventListener("change", () => setTimeout(updateSeePayDirectButton, 12));
+    el.addEventListener("input", () => setTimeout(updateSeePayDirectButton, 12));
+  }
+
+  const seeUrgency = document.getElementById("urgency");
+  const seePages = document.getElementById("pages");
+  const seeRadios = document.querySelectorAll('input[name="payment"]');
+
+  trigger(seeUrgency);
+  trigger(seePages);
+  seeRadios.forEach(r => trigger(r));
+
+  // Initial call
+  document.addEventListener("DOMContentLoaded", updateSeePayDirectButton);
+  setTimeout(updateSeePayDirectButton, 30);
+
+})();
+
+// Handle Direct Pay Click
+function handleSeeDirectPayClick() {
+  const btn = document.getElementById("see_pay_direct_btn");
+  const amount = btn?.dataset.amount;
+
+  if (!amount) {
+    alert("Please select urgency, pages, and payment method first.");
+    return false;
+  }
+
+  const upiID = "9831136342@kotak811";
+  const name = "Assignly";
+
+  const upiLink = `upi://pay?pa=${upiID}&pn=${name}&am=${amount}&cu=INR`;
+
+  window.location.href = upiLink;
+  return false;
+}
