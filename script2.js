@@ -941,3 +941,16 @@ function handleSeeDirectPayClick() {
   window.location.href = upiLink;
   return false;
 }
+
+
+
+
+function handleDirectPayClick(event) {
+    event.preventDefault();  // stops page reload
+    openResearchUpi();       // your UPI function
+}
+
+function handleSeeDirectPayClick(event) {
+    event.preventDefault();  // stops form submit
+    openSeeUpi();            // your UPI function
+}
